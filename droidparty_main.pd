@@ -1,0 +1,57 @@
+#N canvas -8 -8 1366 686 10;
+#X obj 111 127 bng 60 250 50 0 play_trigger empty Play 17 -7 0 10 -258113
+-1 -1;
+#N canvas -8 -8 1366 686 busycomputer 0;
+#X obj 209 48 bng 15 250 50 0 empty play_trigger empty 17 7 0 10 -262144
+-1 -1;
+#X obj 209 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 139 233 mtof;
+#X obj 139 275 osc~;
+#X obj 139 337 dac~;
+#X floatatom 139 173 5 0 0 0 - - -, f 5;
+#X floatatom 139 255 5 0 0 0 - - -, f 5;
+#X obj 139 307 *~;
+#X obj 209 277 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 254 108 5 0 0 0 - - -, f 5;
+#X obj 139 151 random 30;
+#X obj 139 202 + 55;
+#X msg 254 79 150;
+#X msg 334 79 70;
+#X msg 294 79 110;
+#X obj 254 48 bng 15 250 50 0 empty slow empty 17 7 0 10 -262144 -1
+-1;
+#X obj 294 48 bng 15 250 50 0 empty medium empty 17 7 0 10 -262144
+-1 -1;
+#X obj 334 48 bng 15 250 50 0 empty quick empty 17 7 0 10 -262144 -1
+-1;
+#X obj 139 129 metro 110;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 1 0 18 0;
+#X connect 2 0 6 0;
+#X connect 3 0 7 0;
+#X connect 5 0 11 0;
+#X connect 6 0 3 0;
+#X connect 7 0 4 0;
+#X connect 7 0 4 1;
+#X connect 8 0 7 1;
+#X connect 9 0 18 1;
+#X connect 10 0 5 0;
+#X connect 11 0 2 0;
+#X connect 12 0 9 0;
+#X connect 13 0 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 12 0;
+#X connect 16 0 14 0;
+#X connect 17 0 13 0;
+#X connect 18 0 10 0;
+#X restore 431 127 pd busycomputer;
+#X obj 191 127 bng 60 250 50 0 slow empty Slow 17 -7 0 10 -262144 -1
+-1;
+#X obj 271 127 bng 60 250 50 0 medium empty Medium 17 -7 0 10 -262144
+-1 -1;
+#X obj 351 127 bng 60 250 50 0 quick empty Quick 17 -7 0 10 -262144
+-1 -1;
+#X coords 0 -1 1 1 320 100 1 100 100;
